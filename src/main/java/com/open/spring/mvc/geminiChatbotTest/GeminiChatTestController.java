@@ -24,7 +24,10 @@ import lombok.NoArgsConstructor;
 @RequestMapping("/api/chatbot")
 public class GeminiChatTestController {
 
-    private final Dotenv dotenv = Dotenv.load();
+    // account for missing .env
+    Dotenv dotenv = Dotenv.configure()
+        .ignoreIfMissing()
+        .load();
     private final String geminiApiKey = dotenv.get("GEMINI_API_KEY");
     private final String geminiApiUrl = dotenv.get("GEMINI_API_URL");
 
