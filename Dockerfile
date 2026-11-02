@@ -8,5 +8,5 @@ COPY . /app
 RUN sed -i 's/\r$//' mvnw && \
     chmod +x mvnw && \
     ./mvnw package
-CMD ["sh", "-c", "echo STARTING_SPRING_ON_PORT=$PORT && java -jar target/spring-0.0.1-SNAPSHOT.jar --server.port=${PORT:-10000} --logging.level.root=INFO"]
+CMD ["sh", "-c", "echo STARTING_SPRING_ON_PORT=${PORT:-10000}; exec java -jar target/spring-0.0.1-SNAPSHOT.jar --server.address=0.0.0.0 --server.port=${PORT:-10000} --logging.level.root=INFO"]
 EXPOSE 10000
