@@ -47,7 +47,7 @@ public class MiningService {
     public static final double ELECTRICITY_RATE = 0.12; // USD per kWh
     public static final double BTC_PRICE = 45000.0;
 
-    @Scheduled(fixedRate = MINING_INTERVAL)
+    // @Scheduled(fixedRate = MINING_INTERVAL)
     @Transactional
     public void processMining() {
         System.out.println("\n=== Mining Process Started ===");
@@ -90,7 +90,7 @@ public class MiningService {
         });
     }
 
-    @Scheduled(fixedRate = BALANCE_TRANSFER_INTERVAL)
+    // @Scheduled(fixedRate = BALANCE_TRANSFER_INTERVAL)
     @Transactional
     public void processPendingBalances() {
         System.out.println("\n=== Processing Pending Balances ===");
