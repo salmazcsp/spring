@@ -327,6 +327,7 @@ public class SecurityConfig {
         configuration.addAllowedOriginPattern("http://localhost:4599");
         configuration.addAllowedOriginPattern("http://localhost:4600");
         configuration.addAllowedOriginPattern("http://localhost:8585");
+        configuration.addAllowedOriginPattern("https://oak404.github.io");
         configuration.addAllowedOriginPattern("https://opencodingsociety.com");
         configuration.addAllowedOriginPattern("http://opencodingsociety.com");
         configuration.addAllowedOriginPattern("https://pages.opencodingsociety.com");
