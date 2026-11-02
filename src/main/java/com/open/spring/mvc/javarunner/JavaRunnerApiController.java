@@ -25,7 +25,9 @@ public class JavaRunnerApiController {
         this.restClient = builder.build();
         this.localJavaRunner = localJavaRunner;
 
-        final Dotenv dotenv = Dotenv.load();
+        Dotenv dotenv = Dotenv.configure()
+            .ignoreIfMissing()
+            .load();
 
         this.isProduction = Boolean.parseBoolean(dotenv.get("IS_PRODUCTION", "false"));
 
