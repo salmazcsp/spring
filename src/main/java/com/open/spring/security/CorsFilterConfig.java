@@ -53,7 +53,7 @@ public class CorsFilterConfig {
                 );
                 response.setHeader(
                     "Access-Control-Allow-Headers",
-                    "Authorization, Content-Type, X-Requested-With"
+                    "Authorization, Content-Type, X-Requested-With, x-origin"
                 );
 
                 if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
