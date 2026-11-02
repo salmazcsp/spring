@@ -33,7 +33,9 @@ public class GeminiController {
     @Autowired
     private GeminiRepository geminiRepository;
 
-    private final Dotenv dotenv = Dotenv.load();
+    Dotenv dotenv = Dotenv.configure()
+        .ignoreIfMissing()
+        .load();
     private final String geminiApiKey = dotenv.get("GEMINI_API_KEY");
     private final String geminiApiUrl = dotenv.get("GEMINI_API_URL");
 
